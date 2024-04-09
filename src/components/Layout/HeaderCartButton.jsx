@@ -1,6 +1,6 @@
 import React from "react";
 import CartIcon from "../Cart/CartIcon";
-import classes from "./HeaderCartButton.module.css"
+import classes from "./HeaderCartButton.module.css";
 
 const HeaderCartButton = (props) => {
   return (
