@@ -6,21 +6,22 @@ const CartProvider = (props) => {
 
   const addItemToCartHandler = (item) => {
     updateItems([...items, item]);
-    console.log("inside", cartContext);
   };
 
-  const removeItemFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (id) => {
+    const updatedItem = items.filter(item => item.id !== id);
+    updateItems(updatedItem);
+  };
 
   const cartContext = {
     items: items,
-    totalItem: 0,
+    totalItem: items.length,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
 
   return (
     <CartContext.Provider value={cartContext}>
-      {console.log("provide", cartContext)}
       {props.children}
     </CartContext.Provider>
   );
